@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/x-icon" href="ICON.jpg">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .container1 {
+            background-color:#222831;
+            border-radius: 15px;
+            width: 1000px;
+            height: 620px;
+        }
+
+        #Textbox1 {
+            width: 550px;
+            height: 150px;
+            border-radius: 15px;
+            font-size: 20px;
+            resize: none;
+        }
+
+        #Textbox2 {
+            width: 550px;
+            height: 150px;
+            border-radius: 15px;
+            font-size: 20px;
+            resize: none;
+        }
+
+        .btn {
+            width: 250px;
+            height: 50px;
+        }
+
+        .itemBtn {
+            width: 175px;
+            height: 50px;
+            border-radius: 15px;
+            margin: 5px;
+            font-size: 14px;
+			background-color:#f2f2f2;
+			color:black;
+        }
+
+        .spacebtn {
+            width: 275px;
+            height: 50px;
+        }
+    </style>
+    <script>
+        // Function to calculate total cost
+        function calculateTotal() {
+            let items = document.getElementById("Textbox1").value.split(" ");
+
+            const itemPrices = {
+                "Coat and Shorts": 100,
+                "Bodycon Skirt": 448,
+                "Tank Top and Skirt": 586,
+                "Neck Tee and Skirt": 702,
+				"Denim Skirt": 540,
+				"Crop Top and Dress": 591,
+                // Add more clothing items and their prices as needed
+            };
+
+            let totalCost = 0;
+            items.forEach(item => {
+                if (item in itemPrices) {
+                    totalCost += itemPrices[item];
+                }
+            });
+
+            return totalCost;
+        }
+
+        // Function to generate receipt
+        function generateReceipt() {
+            let items = document.getElementById("Textbox1").value;
+            let totalCost = calculateTotal();
+
+            let receiptText = "Receipt:\n\n";
+            receiptText += "Items Purchased:\n";
+            receiptText += items + "\n";
+            receiptText += "Total Cost: Php" + totalCost.toFixed(2);
+
+            document.getElementById("Textbox2").value = receiptText;
+        }
+
+        function buttonClick(value) {
+            document.getElementById("Textbox1").value += value;
+        }
+
+        function clearTextBox1() {
+            document.getElementById("Textbox1").value = "";
+        }
+
+        function clearTextBox2() {
+            document.getElementById("Textbox2").value = "";
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <div class="container1">
+            <table>
+                <tr>
+                    <td>
+                        <textarea id="Textbox1" rows="4" cols="50"></textarea>
+                    </td>
+                </tr>
+
+               
+                <tr>
+                    <td>
+					    <input type="button" value="Coat and Shorts" class="itemBtn" onclick="buttonClick('Coat and Shorts Php100 ')" />
+                        <input type="button" value="Bodycon Skirt" class="itemBtn" onclick="buttonClick('Bodycon Skirt Php448 ')" />
+                        <input type="button" value="Tank Top and Skirt" class="itemBtn" onclick="buttonClick('Tank Top and Skirt Php586 ')"/>
+                      
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+					<input type="button" value="Neck Tee and Skirt" class="itemBtn" onclick="buttonClick('Neck Tee and Skirt Php702 ')" />
+                    <input type="button" value="Denim Skirt"  class="itemBtn" onclick="buttonClick('Denim Skirt Php677')"/>
+				    <input type="button" value="Crop Top and Dress"  class="itemBtn" onclick="buttonClick('Crop Top and Dress Php591')"/>
+					<!-- Add more buttons for additional items here -->  
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="Space" class="spacebtn" onclick="buttonClick(' ')" />
+                        <input type="button" value="Add Item" class="spacebtn" onclick="buttonClick('\n')" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="Clear" class="spacebtn" onclick="clearTextBox1()" />
+                        <input type="button" value="Purchase" class="spacebtn" onclick="generateReceipt()" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea id="Textbox2" rows="4" cols="50"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="Save" class="spacebtn" onclick="saveFunction()" />
+                        <input type="button" value="Clear" class="spacebtn" onclick="clearTextBox2()" />
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </center>
+</body>
+
+</html>

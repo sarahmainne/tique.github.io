@@ -1,0 +1,172 @@
+			body {
+				font-family: Tahoma, sans-serif;
+				margin: 0;
+				padding: 0;}
+			#background-image{
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				height: 100vh;
+				width:100%;
+				color:white;
+				display: flex;
+				text-align: center;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				filter: brightness(50%);}	
+			#background-image {
+			   position: relative;
+			}
+
+			#background-text {
+			   position: absolute;
+			   top: 50%;
+			   left: 50%;
+			   transform: translate(-50%, -50%);
+			   color: white;
+			   font-size: 300%;
+			   text-align: center;
+			}
+			#background-text a {
+			   position: absolute;
+			   top: 150%;
+			   left: 50%;
+			   transform: translate(-50%, -50%);
+			   color: white;
+			   font-size: 30px;
+			   text-align: center;
+			   padding: 20px;
+			   border: 2px solid white;
+			   border-radius: 10px;
+			   color: white;
+			   text-decoration: none;
+			   transition: color 0.3s ease;
+			}
+			#background-text a:hover {
+			   color: #EFC3A4;
+			}
+			/*Side Menu Bar - Javascript*/		
+		   .sidenav {
+				height: 100%;
+				width: 0;
+				position: fixed;
+				z-index: 1;
+				top: 0;
+				left: 0;
+				background-color: #111;
+				overflow-x: hidden;
+				transition: 1.5s;
+				padding-top: 60px;}
+			.sidenav a {
+				padding: 8px 8px 8px 32px;
+				text-decoration: none;
+				font-size: 80%;
+				color: #818181;
+				display: block;
+				transition: 0.3s;}
+			.sidenav a:hover {
+				color: saddlebrown;}
+			.sidenav .closebtn {
+				position: absolute;
+				top: 0;
+				right: 25px;
+				font-size: 36px;
+				margin-left: 50px;}
+			@media screen and (max-height: 450px) {
+				.sidenav {padding-top: 15px;}
+				.sidenav a {font-size: 16px;}}
+			/*Menu Bar Button - Javascript*/	
+			.open-menu-btn{
+				color: saddlebrown;
+				font-size: 140%;
+				cursor: pointer;
+				position: absolute;
+				top: 15px;
+				left: 15px;}
+
+			/*Shopping Cart Button - Javascript*/			
+			.shopping-cart {
+				position: absolute;
+				top: 30px;
+				right: 30px;
+				transform: translateY(-50%);
+				font-size: 30px;
+				color:white;
+				cursor: pointer;}				
+			header {
+				background-color: #EFC3A4;
+				color: black;
+				padding: 1px;
+				text-align: center;
+				font-size: 100%;}
+			nav ul {
+				list-style: none;
+				padding: 10px;
+				margin: 10px;}
+			nav ul li {
+				display: inline;
+				margin-right: 50px;}
+			nav ul li a {
+				color: saddlebrown;
+				text-decoration: none;
+				font-weight: bold;}
+			main{
+				display: flex;
+				justify-content: space-between;
+				padding: 20px;
+				flex-wrap: wrap;}
+			main p{
+			font-size:25px;
+			font-family: arial;}
+			main h1{
+				font-size:40px;
+				margin:20px;
+				font-family: arial;}
+
+			/*My Footer*/
+			footer {
+				background-color: black;
+				color: white;
+				text-align: center;
+				padding: 15px;
+				font-family: calibri;
+				bottom: 0;} 
+			footer div{
+				flex: 1;
+				margin-right: 20px;
+				text-align: center;}
+			footer ul{
+				list-style: none; /*para mawala ang dot sa list*/
+				}
+			footer ul li{
+				display: outline;
+				margin-right: 10px;
+				color: white;
+				font-family: calibri;}
+			footer ul li a{
+				text-decoration: none;/*para mawala ang underline sa link*/
+				color: white;
+				font-family: calibri;}
+			footer h2{
+				color: saddlebrown;
+				font-family: calibri;
+				text-align: center;}
+			#logo {
+				max-width: 50px;
+				border-radius: 50%;
+				position: absolute;
+				top: 5px;
+				left: 800px;}
+			#visit {
+			background-color: lightgray;
+				color: black;
+				padding: 50px;
+				text-align: center;}
+#scrollToTopBtn{
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			font-size: 30px;
+			cursor: pointer;
+			font-family: calibri;}
